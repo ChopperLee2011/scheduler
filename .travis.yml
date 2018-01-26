@@ -1,5 +1,12 @@
 language: node_js
 node_js:
-  - 7
-  - 6
-  - 4
+  - 8
+before_script:
+  - npm run build
+  - npm run setup
+install:
+  - yarn
+script:
+  - npm test
+notifications:
+  email: false

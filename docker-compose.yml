@@ -1,6 +1,6 @@
   redis:
-    container_name: redis
-    image: redis
+    container_name: redis-sentinel
+    image: s7anley/redis-sentinel-docker
     ports:
-      - "6379:6379"
+      - "26379:26379"
     restart: always

@@ -4,8 +4,9 @@
   "description": "This is a awesome project",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register --timeout 60000",
     "build": "babel --optional runtime src -d dist",
+    "setup": "docker-compose up -d --scale sentinel=3",
     "postbuild": "npm test -s",
     "changelog": "github-changes -o ChopperLee2011 -r scheduler",
     "check": "dependency-check package.json --entry src",
@@ -50,6 +51,7 @@
     "standard": "^10.0.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "bluebird": "^3.5.1",
     "commander": "^2.13.0",
     "crontab": "^1.1.3",
